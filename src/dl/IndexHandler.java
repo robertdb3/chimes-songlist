@@ -11,11 +11,11 @@ import java.util.Vector;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-public class DefaultPageHandler implements HttpHandler {
+public class IndexHandler implements HttpHandler {
     private DisplayLogic displayLogic;
     private final String DEFAULT_PAGE = "index.thtml";
 
-    public DefaultPageHandler(DisplayLogic displayLogic) {
+    public IndexHandler(DisplayLogic displayLogic) {
         this.displayLogic = displayLogic;
     }
 

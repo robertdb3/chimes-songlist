@@ -7,7 +7,8 @@ import src.bll.SongDB;
 import src.bll.UserDB;
 import src.dao.Song;
 import src.dao.User;
-import src.dl.DefaultPageHandler;
+import src.dl.IndexHandler;
+import src.dl.LoginHandler;
 import src.dl.DisplayLogic;
 
 public class Main {
@@ -23,7 +24,8 @@ public class Main {
         displayLogic = new DisplayLogic();
 
         HttpServer server = HttpServer.create(new InetSocketAddress("localhost", PORT), 0);
-        server.createContext("/", new DefaultPageHandler(displayLogic));
+        server.createContext("/login", new LoginHandler(displayLogic));
+        server.createContext("/", new IndexHandler(displayLogic));
         server.setExecutor(null);
         server.start();
 

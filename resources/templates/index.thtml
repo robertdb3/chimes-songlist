@@ -1,20 +1,55 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Chimes Song List Portal</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f4f8;
+                color: #333;
+                margin: 0;
+                padding: 20px;
+            }
+
+            h1 {
+                color: #1e3a5f;
+                border-bottom: 2px solid #1e3a5f;
+                padding-bottom: 10px;
+            }
+
+            p {
+                background-color: #ffffff;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            ul {
+                list-style-type: square;
+                padding-left: 20px;
+            }
+
+            li {
+                background-color: #e3eaf1;
+                margin: 5px 0;
+                padding: 10px;
+                border-radius: 5px;
+            }
+        </style>
     </head>
     <body>
-        <h1>Welcome to the Georgetown Chimes Song List Portal.</h1>
+        <h1>Welcome to the Georgetown Chimes Song List Portal!</h1>
 
         <p>
             It is now ${date}. This is a work in progress.
         </p>
 
         <p>
-            Here's a list of random numbers:
+            Menu:
             <ul>
-                <#list randvector as randNum>
-                    <li>${randNum}</li>
-                </#list>
+                <li><a href="/login/">Log In</a></li>
+                <li><a href="/onboard/">Create Account</a></li>
+                <li><a href="/songdb/">See Full Repertoire</a></li>
             </ul>
         </p>
     </body>
