@@ -1,7 +1,9 @@
-package src;
+package src.bll;
 
 import java.io.*;
 import java.util.ArrayList;
+
+import src.dao.User;
 
 public class UserDB {
     private ArrayList<User> users;

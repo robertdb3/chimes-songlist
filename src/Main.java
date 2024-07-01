@@ -1,14 +1,24 @@
 package src;
 
 import java.util.Scanner;
+import java.net.InetSocketAddress;
+import com.sun.net.httpserver.HttpServer;
+import src.bll.SongDB;
+import src.bll.UserDB;
+import src.dao.Song;
+import src.dao.User;
 
 public class Main {
     public static void main(String[] args) {
+        final static int PORT = 8080;
         UserDB userDB = new UserDB();
         SongDB songDB = new SongDB();
 
         Scanner scanner = new Scanner(System.in);
         User currentUser = null;
+
+        HttpServer server = HttpServer.create(new InetSocketAddress("localhost", PORT), 0);
+        server.createContext("/", new DefaultPageHandler(displayLogic));
 
         while (true) {
             // Display menu
@@ -86,16 +96,30 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    // Add Known Song
-                    System.out.println("BROKEN: Enter the title of the song you want to add to your known songs:");
+                    // Assuming songDB is a collection (e.g., List, Map) that contains Song objects
+                    // and Song has a title property or getTitle method.
+                    System.out.println("Enter the title of the song you want to add to your known songs:");
                     String songTitle = scanner.nextLine();
-                    boolean added = currentUser.addSong(songDB, songTitle);
-                    if (added) {
-                        System.out.println("Song added successfully.");
+                    // Find the song in the songDB by title
+                    Song songToAdd = null;
+                    for (Song song : songDB.getSongs()) {
+                        if (song.getTitle().equalsIgnoreCase(songTitle)) {
+                            songToAdd = song;
+                            break;
+                        }
+                    }
+                    
+                    // Add the song to the currentUser's known songs if found
+                    if (songToAdd != null) {
+                        boolean added = currentUser.addSong(songToAdd);
+                        if (added) {
+                            System.out.println("Song added successfully.");
+                        } else {
+                            System.out.println("Failed to add the song.");
+                        }
                     } else {
                         System.out.println("Song not found in the universal song list.");
                     }
-                    break;
 
                 case 2:
                     // List Known Songs

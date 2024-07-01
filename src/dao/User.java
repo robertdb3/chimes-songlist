@@ -1,4 +1,4 @@
-package src;
+package src.dao;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -51,12 +51,17 @@ public class User {
         this.password = password;
     }
 
-    public void addSong(Song song) {
-        this.songList.add(song);
+    public boolean addSong(Song song) {
+        if(this.songList.add(song)) {
+            saveSongsToCSV();
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void removeSong(Song song) {
-        this.songList.remove(song);
+    public boolean removeSong(Song song) {
+        return this.songList.remove(song);
     }
 
     @Override

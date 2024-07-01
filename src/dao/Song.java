@@ -1,4 +1,4 @@
-package src;
+package src.dao;
 public class Song {
     private String title;
     private String type;

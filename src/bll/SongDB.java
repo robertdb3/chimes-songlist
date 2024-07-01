@@ -1,7 +1,9 @@
-package src;
+package src.bll;
 
 import java.io.*;
 import java.util.ArrayList;
+
+import src.dao.Song;
 
 public class SongDB {
     private ArrayList<Song> songs;
