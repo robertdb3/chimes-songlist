@@ -2,10 +2,10 @@ package src;
 
 import java.util.ArrayList;
 
-public class SongList {
+public class SongDB {
     private ArrayList<Song> songs;
 
-    public SongList() {
+    public SongDB() {
         this.songs = new ArrayList<>();
     }
 

@@ -1,7 +1,7 @@
 package src;
 public class Main {
     public static void main(String[] args) {
-        SongList songList = new SongList();
+        SongDB songList = new SongDB();
 
         Song song1 = new Song("Mandy", "Core 80", "E", "C");
 
