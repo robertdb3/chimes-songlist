@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class SongDB {
     private ArrayList<Song> songs;
-    private static final String CSV_FILE = "../songs.csv";
+    private static final String CSV_FILE = "data/songDB.csv";
 
     public SongDB() {
         this.songs = new ArrayList<>();
