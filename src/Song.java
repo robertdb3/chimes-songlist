@@ -43,4 +43,14 @@ public class Song {
     public void setKey(String key) {
         this.key = key;
     }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "title='" + title + '\'' +
+                ", type='" + type + '\'' +
+                ", pitch='" + pitch + '\'' +
+                ", key='" + key + '\'' +
+                '}';
+    }
 }

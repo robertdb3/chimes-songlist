@@ -1,6 +1,13 @@
 package src;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        SongList songList = new SongList();
+
+        Song song1 = new Song("Mandy", "Core 80", "E", "C");
+
+        songList.addSong(song1);
+
+        System.out.println("List of songs:");
+        songList.listSongs();
     }
 }
