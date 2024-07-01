@@ -7,18 +7,25 @@ import src.bll.SongDB;
 import src.bll.UserDB;
 import src.dao.Song;
 import src.dao.User;
+import src.dl.DefaultPageHandler;
+import src.dl.DisplayLogic;
 
 public class Main {
-    public static void main(String[] args) {
-        final static int PORT = 8080;
+    final static int PORT = 8080;
+    private static DisplayLogic displayLogic;
+    public static void main(String[] args) throws Exception {
         UserDB userDB = new UserDB();
         SongDB songDB = new SongDB();
 
         Scanner scanner = new Scanner(System.in);
         User currentUser = null;
 
+        displayLogic = new DisplayLogic();
+
         HttpServer server = HttpServer.create(new InetSocketAddress("localhost", PORT), 0);
         server.createContext("/", new DefaultPageHandler(displayLogic));
+        server.setExecutor(null);
+        server.start();
 
         while (true) {
             // Display menu

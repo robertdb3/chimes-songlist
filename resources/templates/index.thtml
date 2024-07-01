@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Chimes Song List Portal</title>
+    </head>
+    <body>
+        <h1>Welcome to the Georgetown Chimes Song List Portal.</h1>
+
+        <p>
+            It is now ${date}. This is a work in progress.
+        </p>
+
+        <p>
+            Here's a list of random numbers:
+            <ul>
+                <#list randvector as randNum>
+                    <li>${randNum}</li>
+                </#list>
+            </ul>
+        </p>
+    </body>
+</html>
