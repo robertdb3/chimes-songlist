@@ -3,9 +3,11 @@ public class Main {
     public static void main(String[] args) {
         SongDB songList = new SongDB();
 
-        //Song song1 = new Song("Mandy", "Core 80", "E", "C");
+        System.out.println("Welcome to the Georgetown Chimes Song List Portal!");
+        System.out.println("Please log in below:");
 
-        //songList.addSong(song1);
+        
+
 
         System.out.println("List of songs:");
         songList.listSongs();
