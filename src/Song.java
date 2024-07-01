@@ -44,6 +44,19 @@ public class Song {
         this.key = key;
     }
 
+    public String toCSV() {
+        return title + "," + type + "," + pitch + "," + key;
+    }
+
+    public static Song fromCSV(String csv) {
+        String[] parts = csv.split(",");
+        String title = parts[0];
+        String type = parts[1];
+        String pitch = parts[2];
+        String key = parts[3];
+        return new Song(title, type, pitch, key);
+    }
+
     @Override
     public String toString() {
         return "Song{" +

@@ -8,9 +8,10 @@ public class User {
     private String password;
     private ArrayList<Song> songList;
 
-    public User(String name, String email) {
+    public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
+        this.password = password;
         this.songList = new ArrayList<>();
     }
 
@@ -47,6 +48,6 @@ public class User {
     }
 
     public void removeSong(Song song) {
-        songList.remove(song);
+        this.songList.remove(song);
     }
 }
